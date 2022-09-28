@@ -29,7 +29,7 @@
     "semantic-release": "semantic-release --branches master"
   },
   "release": {
-    "branches": ["master"]
+    "branches": ["main"]
   },
 
   "prettier": {},
