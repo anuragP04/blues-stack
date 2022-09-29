@@ -23,7 +23,8 @@ jobs:
           with:
             node-version: "16.x"
         - run: npm ci
-        - run: npm run semantic-release; echo ${{ secrets.GITHUB_TOKEN }}
+        - run: echo ${{ secrets.GITHUB_TOKEN }}
+        - run: npm run semantic-release
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
