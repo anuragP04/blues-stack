@@ -13,7 +13,7 @@ permissions:
 jobs:
   
   release: 
-      name: Release ${{ secrets.GITHUB_TOKEN }}
+      name: Release 
       if: ${{ github.ref == 'refs/heads/dev' && github.event_name == 'push' }}
 
       runs-on: ubuntu-latest
@@ -23,7 +23,7 @@ jobs:
           with:
             node-version: "16.x"
         - run: npm ci
-        - run: npm run semantic-release
+        - run: npm run semantic-release; echo ${{ secrets.GITHUB_TOKEN }}
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
