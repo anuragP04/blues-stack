@@ -29,9 +29,10 @@
     "semantic-release": "semantic-release --branches main"
   },
   "release": {
-    "branches": ["main"]
+    "branches": [
+      "main"
+    ]
   },
-
   "prettier": {},
   "eslintIgnore": [
     "/node_modules",
@@ -106,5 +107,9 @@
   },
   "prisma": {
     "seed": "ts-node --require tsconfig-paths/register prisma/seed.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anuragP04/blues-stack.git"
   }
 }
