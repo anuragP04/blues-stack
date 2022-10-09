@@ -8,6 +8,7 @@
     "build:css": "npm run generate:css -- --minify",
     "build:remix": "remix build",
     "build:server": "esbuild --platform=node --format=cjs ./server.ts --outdir=build --bundle",
+    "commit":"git-cz",
     "dev": "run-p dev:*",
     "dev:build": "cross-env NODE_ENV=development npm run build:server -- --watch",
     "dev:css": "cross-env NODE_ENV=development npm run generate:css -- --watch",
@@ -26,12 +27,14 @@
     "test:e2e:run": "cross-env PORT=8811 start-server-and-test start:mocks http://localhost:8811 \"npx cypress run\"",
     "typecheck": "tsc -b && tsc -b cypress",
     "validate": "run-p \"test -- --run\" lint typecheck test:e2e:run",
-    "semantic-release": "semantic-release --branches dev -r https://github.com/anuragP04/blues-stack.git"
+    "semantic-release": "semantic-release --branches main"
   },
   "release": {
-    "branches": ["dev"]
+    "branches": [
+      "main"
+    ]
   },
-
+  "prettier": {},
   "eslintIgnore": [
     "/node_modules",
     "/build",
@@ -78,6 +81,7 @@
     "c8": "^7.12.0",
     "cookie": "^0.5.0",
     "cypress": "^10.8.0",
+    "cz-conventional-changelog": "^3.3.0",
     "dotenv": "^16.0.2",
     "esbuild": "^0.15.8",
     "eslint": "^8.23.1",
@@ -109,5 +113,10 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/anuragP04/blues-stack.git"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
