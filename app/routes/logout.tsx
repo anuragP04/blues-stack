@@ -8,5 +8,11 @@ export async function action({ request }: ActionArgs) {
 }
 
 export async function loader() {
+  console.log("holasaddsa")
+  console.log("holasaddsa")
+  console.log("holasaddsa")
+  console.log("holasaddsa")
+  console.log("holasaddsa")
+  console.log("holasaddsa")
   return redirect("/");
 }
